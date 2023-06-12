@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug",
+      "program": "${workspaceFolder}/index.js",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeVersion": "19.3.0",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  ]
+}

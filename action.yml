@@ -1,0 +1,24 @@
+name: "Jira Zephyr Report Action"
+description: "Make a request to an API"
+inputs:
+  project_key:
+    description: "Project key"
+    required: true
+  auto_create_test_cases:
+    description: "Auto create test cases"
+    required: false
+  format:
+    description: "Report format"
+    required: true
+  auth:
+    description: "Authorization token"
+    required: true
+  file_path:
+    description: "File path"
+    required: true
+  test_cycle:
+    description: "Test cycle"
+    required: false
+runs:
+  using: "node12"
+  main: "index.js"
