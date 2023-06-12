@@ -51,7 +51,7 @@ jobs:
       # generate or fetch the report here
 
       - name: Upload report to Jira Zephyr
-        uses: programworld/jira-zephyr-report-action@v1
+        uses: program-world-labs/jira-zephyr-action@v1
         with:
           project_key: "your_project_key"
           format: "cucumber"

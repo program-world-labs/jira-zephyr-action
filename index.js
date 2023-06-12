@@ -13,8 +13,6 @@ async function run() {
     var testCycle = core.getInput("test_cycle");
     var autoCreateTestCases = core.getInput("auto_create_test_cases");
 
-    var autoCreateTestCases = false;
-
     testCycle = testCycle !== "" ? JSON.parse(testCycle) : null;
 
     autoCreateTestCases = autoCreateTestCases === "true" ? "true" : "false";
@@ -30,7 +28,9 @@ async function run() {
     formData.append("file", fs.createReadStream(filePath));
     if (testCycle) {
       const testCycleStream = Readable.from(JSON.stringify(testCycle));
-      formData.append("testCycle", testCycleStream);
+      formData.append("testCycle", testCycleStream, {
+        contentType: "application/json",
+      });
     }
 
     const response = await axios.post(url, formData, {
